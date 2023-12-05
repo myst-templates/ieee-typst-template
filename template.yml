@@ -1,0 +1,43 @@
+jtex: v1
+kind: typst
+title: IEEE Typst Template
+description: IEEE Template from Typst app, updated as a MyST template
+template: main.typ
+files:
+  - template.typ
+  - LICENSE
+authors:
+  - name: Franklin Koch
+    github: fwkoch
+    affiliations:
+      - Curvenote
+  - name: Laurenz Mädje
+    github: laurmaedje
+    affiliations:
+      - Typst
+  - name: Brandon Sánchez
+    github: TWB0109
+version: 0.0.1
+license: Unlicense
+tags:
+  - ieee
+  - article
+  - paper
+thumbnail: ./thumbnail.png
+github: https://github.com/myst-templates/ieee-myst-template
+doc:
+  - id: title
+    required: true
+  - id: keywords
+  - id: authors
+parts:
+  - id: abstract
+    description: >
+      An abstract is a short summary of your research paper or report. A good
+      abstract will prepare readers for
+
+      the detailed information to follow, communicate the essence of the article
+      and help readers take away and
+
+      remember key points.
+    max_words: 500

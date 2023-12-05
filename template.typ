@@ -2,7 +2,7 @@
 // it as an article in the style of the IEEE.
 #let ieee(
   // The paper's title.
-  title: "Paper Title",
+  title: [Paper Title],
 
   // An array of authors. For each author you can specify a name,
   // department, organization, location, and email. Everything but
@@ -25,11 +25,11 @@
   // The paper's content.
   body
 ) = {
-  // Set document metdata.
+  // Set document metadata.
   set document(title: title, author: authors.map(author => author.name))
 
   // Set the body font.
-  set text(font: "Times New Roman", size: 10pt)
+  set text(font: "STIX Two Text", size: 10pt)
 
   // Configure the page.
   set page(
@@ -49,6 +49,20 @@
   // Configure equation numbering and spacing.
   set math.equation(numbering: "(1)")
   show math.equation: set block(spacing: 0.65em)
+
+  // Configure appearance of equation references
+  show ref: it => {
+    if it.element != none and it.element.func() == math.equation {
+      // Override equation references.
+      link(it.element.location(), numbering(
+        it.element.numbering,
+        ..counter(math.equation).at(it.element.location())
+      ))
+    } else {
+      // Other references as usual.
+      it
+    }
+  }
 
   // Configure lists.
   set enum(indent: 10pt, body-indent: 9pt)
@@ -103,7 +117,7 @@
 
   // Display the paper's title.
   v(3pt, weak: true)
-  align(center, text(26pt, title))
+  align(center, text(18pt, title))
   v(8.35mm, weak: true)
 
   // Display the authors list.
