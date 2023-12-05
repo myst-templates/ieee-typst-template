@@ -1,8 +1,6 @@
 #import "template.typ": *
 #show: ieee.with(
-  title: [
-[-doc.title-]
-  ],
+  title: "[-doc.title-]",
   abstract: [
 [-parts.abstract-]
   ],
