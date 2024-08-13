@@ -4,6 +4,7 @@ title: IEEE Typst Template
 description: IEEE Template from Typst app, updated as a MyST template
 template: main.typ
 files:
+  - main.typ
   - template.typ
   - LICENSE
 authors:
