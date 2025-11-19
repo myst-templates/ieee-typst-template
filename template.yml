@@ -25,7 +25,7 @@ tags:
   - article
   - paper
 thumbnail: ./thumbnail.png
-github: https://github.com/myst-templates/ieee-myst-template
+github: https://github.com/myst-templates/ieee-typst-template
 doc:
   - id: title
     required: true
